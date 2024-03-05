@@ -29,6 +29,7 @@ public class wheel : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = center.localPosition;
     }
+
     // finds the corresponding visual wheel
     // correctly applies the transform
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
