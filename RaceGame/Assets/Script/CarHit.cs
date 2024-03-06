@@ -4,27 +4,31 @@ using UnityEngine;
 
 public class CarHit : MonoBehaviour
 {
-    public Collider Front;
-    public Collider Back;
-    public Collider Middle;
-    
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
+        // 들어온 콜라이더의 방향을 가져옴
+        Vector3 direction = (collision.transform.position - transform.position).normalized;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        // 콜라이더의 방향을 기준으로 앞, 뒤, 오른쪽, 왼쪽을 판별함
+        float dotForward = Vector3.Dot(transform.forward, direction);
+        float dotRight = Vector3.Dot(transform.right, direction);
 
-    public void OnTriggerEnter(Collider collison)
-    {
-        if (Front.CompareTag("Car"))
+        // 방향을 기준으로 판별된 결과를 출력
+        if (dotForward > 0.5f)
         {
-
+            Debug.Log("Entered from the front");
+        }
+        else if (dotForward < -0.5f)
+        {
+            Debug.Log("Entered from the back");
+        }
+        else if (dotRight > 0.5f)
+        {
+            Debug.Log("Entered from the right");
+        }
+        else if (dotRight < -0.5f)
+        {
+            Debug.Log("Entered from the left");
         }
     }
 }
