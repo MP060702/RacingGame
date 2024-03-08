@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638451231771605995
-    m_Hash: 1646665576
+      ticks: 638454752785118246
+    m_Hash: 105689471
   m_LockFileStatus:
     m_FilePath: "C:/Users/\uC18C\uCC2C\uC601/Desktop/RacingGame/RaceGame/Packages/packages-lock.json"
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638451232046400084
-    m_Hash: 4059302960
+      ticks: 638454752785123332
+    m_Hash: 4138499133
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -735,9 +735,11 @@ m_ResolvedPackages:
     - 1.8.0
     - 1.9.0
     - 1.9.1
+    - 1.9.2
     compatible:
     - 1.9.1
-    recommended: 1.9.1
+    - 1.9.2
+    recommended: 1.9.2
     deprecated:
     - 1.8.0-pre.1
   dependencies:

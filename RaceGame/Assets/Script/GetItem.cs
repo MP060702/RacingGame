@@ -27,11 +27,11 @@ public class GetItem : MonoBehaviour
                     Debug.Log(playerInfo.money);
                     break;
                 case 4:
-                    playerInfo.SetPlayerSpeed(1.5f);
+                    playerInfo.SetPlayerSpeed(100f);
                     Debug.Log("SpeedUP");
                     break;
                 case 5:
-                    playerInfo.SetPlayerSpeed(2.0f);
+                    playerInfo.SetPlayerSpeed(200f);
                     Debug.Log("SpeedUP");
                     break;
             }

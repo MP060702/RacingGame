@@ -357,6 +357,8 @@
 "Assets/Script/GetItem.cs"
 "Assets/Script/Item.cs"
 "Assets/Script/PlayerInformation.cs"
+"Assets/Script/SIxEnginePower.cs"
+"Assets/Script/UIManager.cs"
 "Assets/Script/wheel.cs"
 -langversion:9.0
 
