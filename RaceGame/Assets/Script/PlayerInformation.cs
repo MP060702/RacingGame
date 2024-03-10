@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Search;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerInformation : MonoBehaviour
 {
     public int money = 0;
+    public int Lap = 0;
     Rigidbody rb;
      
     void Start()
@@ -14,11 +14,11 @@ public class PlayerInformation : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         money = GameInstance.instance.currentmoney;
         Debug.Log(money);
+        AddBuyItems();
     }
     private void Update()
     {
-        AddBuyItems();
-        if (Input.GetKeyDown(KeyCode.B)) SceneManager.LoadScene("Shop");
+        GameInstance.instance.currentmoney = money;
     }
 
     public void SetPlayerSpeed(float speed)
@@ -34,5 +34,22 @@ public class PlayerInformation : MonoBehaviour
             itemObjs.transform.parent = gameObject.transform;
         }
         
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("FinishLine"))
+        {
+            if(GetComponent<wheel>().CanTouchFinishLine == true)
+            {
+                GetComponent<wheel>().CanTouchFinishLine = false;
+                Lap++;
+
+                if(Lap >= 3)
+                {
+                    Debug.Log("You Win");
+                }
+            }
+        }
     }
 }

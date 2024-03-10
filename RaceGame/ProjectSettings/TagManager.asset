@@ -6,6 +6,11 @@ TagManager:
   tags:
   - TestCar
   - Item
+  - FinishLine
+  - BuyItem
+  - BuyItem1
+  - BuyItem2
+  - EnemyAi
   layers:
   - Default
   - TransparentFX

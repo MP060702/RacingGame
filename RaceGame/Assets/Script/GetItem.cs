@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GetItem : MonoBehaviour
 {
+    public GameObject EnemyAi;
+
     private void OnTriggerEnter(Collider other)
-    {
+    {   
         if (other.CompareTag("Item"))
         {
             int type = other.GetComponent<Item>().ItemType;
-            PlayerInformation playerInfo = gameObject.GetComponent<PlayerInformation>();
-            
+            PlayerInformation playerInfo = gameObject.GetComponent<PlayerInformation>();           
 
             switch (type)
             {
@@ -27,13 +29,15 @@ public class GetItem : MonoBehaviour
                     Debug.Log(playerInfo.money);
                     break;
                 case 4:
-                    playerInfo.SetPlayerSpeed(100f);
-                    Debug.Log("SpeedUP");
+                    Debug.Log("SpeedUP1");
                     break;
                 case 5:
-                    playerInfo.SetPlayerSpeed(200f);
-                    Debug.Log("SpeedUP");
+                    Debug.Log("SpeedUP2");
                     break;
+                case 6:
+                    SceneManager.LoadScene("Shop");
+                    break;
+
             }
         }
     }

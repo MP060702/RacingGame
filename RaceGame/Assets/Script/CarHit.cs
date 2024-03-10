@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CarHit : MonoBehaviour
-{
+{   
+    Rigidbody rb;
+
     private void OnCollisionEnter(Collision collision)
     {
+        rb = GetComponent<Rigidbody>();
         // 들어온 콜라이더의 방향을 가져옴
         Vector3 direction = (collision.transform.position - transform.position).normalized;
 

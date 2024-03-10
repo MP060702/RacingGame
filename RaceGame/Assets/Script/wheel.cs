@@ -22,19 +22,34 @@ public class wheel : MonoBehaviour
     public Transform center;
 
     public bool IsPlayer;
+    public bool CanTouchFinishLine = false;
+    public bool AICanTouchFinishLine = false;
+
+    public int Laps;
 
     private Rigidbody rb;
 
     public Transform WayPoints;
-    private Transform TargetPoint;
-    private int WayIndex = 0;
+
+    [HideInInspector] public Transform TargetPoint;
+
+    public int WayIndex = 0;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = center.localPosition;
 
-        if (!IsPlayer) TargetPoint = WayPoints.GetChild(WayIndex);
+        TargetPoint = WayPoints.GetChild(WayIndex);
+
+        if (gameObject.CompareTag("Player"))
+        {
+            IsPlayer = true;
+        }
+        else
+        {
+            IsPlayer = false;
+        }
     }
 
     // finds the corresponding visual wheel
@@ -70,17 +85,34 @@ public class wheel : MonoBehaviour
         }
         else
         {
-            if (Vector3.Distance(TargetPoint.position, transform.position) <= 10 && WayPoints.childCount > WayIndex + 1)
-            {
-                WayIndex++;
-                TargetPoint = WayPoints.GetChild(WayIndex);
-                if (WayPoints.childCount - 1 == WayIndex) WayIndex = 0;
-            }
-
-            Vector3 waypointRelativeDistance = transform.InverseTransformPoint(TargetPoint.position);
-            waypointRelativeDistance /= waypointRelativeDistance.magnitude;
-            steering = (waypointRelativeDistance.x / waypointRelativeDistance.magnitude) * 25;
+            Vector3 waypointDistance = transform.InverseTransformPoint(TargetPoint.position);
+            waypointDistance = waypointDistance.normalized;
+            steering = waypointDistance.x * 25;
         }
+
+        if (Vector3.Distance(TargetPoint.position, transform.position) <= 10)
+        {
+            if (WayPoints.childCount > WayIndex)
+                WayIndex++;
+
+            if (WayIndex == WayPoints.childCount)
+            {
+                WayIndex = 0;
+
+                if (IsPlayer)
+                {
+                    CanTouchFinishLine = true;
+                }
+                else
+                {
+                    AICanTouchFinishLine = true;
+                }
+
+            }
+            TargetPoint = WayPoints.GetChild(WayIndex);
+        }
+
+    
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -103,14 +135,30 @@ public class wheel : MonoBehaviour
         }
     }
 
-    private void Update()
-    {   
-        if(IsPlayer)
-        {
-            if (Input.GetKeyDown(KeyCode.K))
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("FinishLine"))
+        {   
+            if(AICanTouchFinishLine == true)
             {
-                rb.AddForce(transform.forward * 20000, ForceMode.Impulse);
+                AICanTouchFinishLine = false;
+                Laps++;
+
+                if (Laps >= 3)
+                {
+                    Debug.Log("You Lose");
+                }
             }
         }
     }
-}
+    private void Update()
+    {
+          if (IsPlayer)
+          {
+                if (Input.GetKeyDown(KeyCode.K))
+                {
+                    rb.AddForce(transform.forward * 20000, ForceMode.Impulse);
+                }
+          }
+        }
+    }
