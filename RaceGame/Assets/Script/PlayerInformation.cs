@@ -10,7 +10,8 @@ public class PlayerInformation : MonoBehaviour
     Rigidbody rb;
      
     void Start()
-    {   
+    {
+        GameManager.instance.SpawnItem();
         rb = GetComponent<Rigidbody>();
         money = GameInstance.instance.currentmoney;
         Debug.Log(money);
@@ -40,9 +41,11 @@ public class PlayerInformation : MonoBehaviour
     {
         if (other.CompareTag("FinishLine"))
         {
+
             if(GetComponent<wheel>().CanTouchFinishLine == true)
             {
                 GetComponent<wheel>().CanTouchFinishLine = false;
+                GameManager.instance.SpawnItem();
                 Lap++;
 
                 if(Lap >= 3)

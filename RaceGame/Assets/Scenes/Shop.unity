@@ -406,6 +406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2a129e8c9ee8045bb46dbc19f91016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuyItemIcons: []
+  BuyItemImages: []
 --- !u!4 &1353356486
 Transform:
   m_ObjectHideFlags: 0
@@ -3677,7 +3679,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1353356485}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: GoBackGame
+        m_MethodName: GoMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

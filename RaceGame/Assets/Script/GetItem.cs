@@ -35,7 +35,7 @@ public class GetItem : MonoBehaviour
                     Debug.Log("SpeedUP2");
                     break;
                 case 6:
-                    SceneManager.LoadScene("Shop");
+                    UIManager.instance.InGameShop();
                     break;
 
             }
