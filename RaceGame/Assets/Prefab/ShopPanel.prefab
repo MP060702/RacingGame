@@ -1760,7 +1760,7 @@ MonoBehaviour:
         m_MethodName: Buy
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1003071646204638544, guid: 914dadc6791f4ed46892f9e2a969bc29, type: 3}
+          m_ObjectArgument: {fileID: 563742582734000417, guid: e94e85470eecf8346b55316654956c35, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -4598,7 +4598,7 @@ MonoBehaviour:
         m_MethodName: Buy
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1003071646204638544, guid: 7d8c10f1dea1ca044baa313ef57da428, type: 3}
+          m_ObjectArgument: {fileID: 3253856597931345064, guid: 21c58f652c4695546a11a754ecc59f42, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -5055,7 +5055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1902274814639407118
 Transform:
   m_ObjectHideFlags: 0
@@ -5273,7 +5273,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: GoMain
+        m_MethodName: Return
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5777,7 +5777,7 @@ MonoBehaviour:
         m_MethodName: Buy
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1003071646204638544, guid: 33e6f7444b59d67498bc8b7a9947b617, type: 3}
+          m_ObjectArgument: {fileID: 6288040234210576379, guid: de38fad063bbabe4398aadc3236dbabc, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

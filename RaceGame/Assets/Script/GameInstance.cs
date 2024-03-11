@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameInstance : MonoBehaviour
 {
-    [HideInInspector] public List<GameObject> Items = new List<GameObject>();
+    public List<GameObject> Items = new List<GameObject>();
     public static GameInstance instance;
     public int currentmoney = 0;
 

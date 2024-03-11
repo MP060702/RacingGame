@@ -11,7 +11,7 @@ public class WayPointGizmo : MonoBehaviour
         {   
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(t.position, 1);
-            Gizmos.DrawWireSphere(t.position, 10);
+            Gizmos.DrawWireSphere(t.position, 40);
             
         }
 

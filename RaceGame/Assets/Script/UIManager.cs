@@ -42,14 +42,14 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
-        AddBuyItemImage(); 
+        
     }
 
     public void AddBuyItemImage()
     {
         int itemIconIndex = 0;
 
-        string[] buyItemTags = { "BuyItem", "BuyItem1", "BuyItem2" };
+        string[] buyItemTags = { "DesertWheel", "MountainWheel", "CityWheel", "6Engine", "8Engine"};
 
         for (int i = 0; i < buyItemTags.Length; i++)
         {

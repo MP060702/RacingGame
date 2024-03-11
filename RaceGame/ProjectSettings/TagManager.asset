@@ -7,10 +7,12 @@ TagManager:
   - TestCar
   - Item
   - FinishLine
-  - BuyItem
-  - BuyItem1
-  - BuyItem2
+  - DesertWheel
+  - MountainWheel
+  - CityWheel
   - EnemyAi
+  - 6Engine
+  - 8Engine
   layers:
   - Default
   - TransparentFX

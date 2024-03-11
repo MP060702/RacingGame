@@ -35,6 +35,8 @@ public class wheel : MonoBehaviour
 
     public int WayIndex = 0;
 
+    public GameObject[] wheelList;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -45,6 +47,7 @@ public class wheel : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             IsPlayer = true;
+            
         }
         else
         {
@@ -82,6 +85,9 @@ public class wheel : MonoBehaviour
             motor = maxMotorTorque * Input.GetAxis("Vertical");
             steering = maxSteeringAngle * Input.GetAxis("Horizontal");
             Break = Input.GetKey(KeyCode.Space) ? BreakForce : 0;
+
+            string[] wheelItemTags = { "DesertWheel", "MountainWheel", "CityWheel" };
+ 
         }
         else
         {
@@ -90,7 +96,7 @@ public class wheel : MonoBehaviour
             steering = waypointDistance.x * 25;
         }
 
-        if (Vector3.Distance(TargetPoint.position, transform.position) <= 10)
+        if (Vector3.Distance(TargetPoint.position, transform.position) <= 40)
         {
             if (WayPoints.childCount > WayIndex)
                 WayIndex++;
