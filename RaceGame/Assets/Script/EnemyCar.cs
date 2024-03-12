@@ -6,17 +6,19 @@ using UnityEngine;
 public class EnemyCar : MonoBehaviour
 {
     private  Transform WayPoints;
-    [HideInInspector] public Vector3 TargetPoint;
+    public Transform TargetPoint;
     public int WayIndex;
     public List<AxleInfo> axleInfos;
     public GameObject Player;
 
     public void Start()
-    {   
+    {
+        Player = GameObject.FindWithTag("Player");
         wheel playerController = Player.GetComponent<wheel>();
         WayPoints = playerController.WayPoints;
         WayIndex = playerController.WayIndex + 2;
         transform.position = WayPoints.GetChild(WayIndex).position;
+        TargetPoint = WayPoints.GetChild(0);
     }
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
@@ -41,16 +43,16 @@ public class EnemyCar : MonoBehaviour
         float steering = 0;
         float Break = 0;
 
-        Vector3 WaypointDistance = transform.InverseTransformPoint(TargetPoint);
+        Vector3 WaypointDistance = transform.InverseTransformPoint(TargetPoint.position);
         WaypointDistance = WaypointDistance.normalized;
         steering = WaypointDistance.x * 25;
-        Vector3 EndPoint = WayPoints.GetChild(WayIndex - 3).transform.position;
 
-        if (Vector3.Distance(TargetPoint, transform.position) <= 30)
+        if (Vector3.Distance(TargetPoint.position, transform.position) <= 30)
         {
-            WayIndex--;
-            TargetPoint = WayPoints.GetChild(WayIndex).position;
-            if (TargetPoint == EndPoint) Destroy(gameObject);
+            if(WayPoints.childCount > WayIndex)
+                WayIndex--;
+
+            TargetPoint = WayPoints.GetChild(WayIndex);
         }
 
         foreach (AxleInfo axleInfo in axleInfos)

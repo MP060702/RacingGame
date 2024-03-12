@@ -2059,6 +2059,10 @@ PrefabInstance:
       propertyPath: WayPoints
       value: 
       objectReference: {fileID: 1095402913}
+    - target: {fileID: 6442167869235960633, guid: bace3b4cee57c924988c3ced549e0a20, type: 3}
+      propertyPath: maxMotorTorque
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 7625283820638223281, guid: bace3b4cee57c924988c3ced549e0a20, type: 3}
       propertyPath: m_Name
       value: Car
@@ -3064,6 +3068,10 @@ PrefabInstance:
     - target: {fileID: 1694893363634783502, guid: 581b3082f26193f46942374735536609, type: 3}
       propertyPath: m_Name
       value: PlayerCar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460538819408286464, guid: 581b3082f26193f46942374735536609, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

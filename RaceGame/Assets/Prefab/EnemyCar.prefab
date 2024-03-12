@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77ce6b4e50181d41a8747d1d22a47bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPoint: {x: 0, y: 0, z: 0}
+  TargetPoint: {fileID: 0}
   WayIndex: 0
   axleInfos:
   - leftWheel: {fileID: 2506055669517986574}
@@ -86,7 +86,7 @@ MonoBehaviour:
     rightWheel: {fileID: 3376576192674848450}
     motor: 1
     steering: 0
-  Player: {fileID: 1694893363634783502, guid: 581b3082f26193f46942374735536609, type: 3}
+  Player: {fileID: 0}
 --- !u!1 &177446090504475618
 GameObject:
   m_ObjectHideFlags: 0
