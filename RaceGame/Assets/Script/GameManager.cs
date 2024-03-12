@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public Transform WayPoints;
     public GameObject[] Items;
     public static GameManager instance;
+    public GameObject Enemy;
+
 
     private void Awake()
     {
@@ -32,5 +34,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
+    }
+    public void SpawnEnemy()
+    {
+        if (Random.Range(0, 3) == 0)
+        {
+            Instantiate(Enemy);
+            Debug.Log("SpawnEnemy");
+        }
     }
 }

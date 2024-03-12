@@ -84,9 +84,7 @@ public class wheel : MonoBehaviour
         {
             motor = maxMotorTorque * Input.GetAxis("Vertical");
             steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-            Break = Input.GetKey(KeyCode.Space) ? BreakForce : 0;
-
-            string[] wheelItemTags = { "DesertWheel", "MountainWheel", "CityWheel" };
+            Break = Input.GetKey(KeyCode.Space) ? BreakForce : 0;       
  
         }
         else

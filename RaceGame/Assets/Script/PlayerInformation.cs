@@ -13,6 +13,7 @@ public class PlayerInformation : MonoBehaviour
     void Start()
     {
         GameManager.instance.SpawnItem();
+        GameManager.instance.SpawnEnemy();
         rb = GetComponent<Rigidbody>();
         money = GameInstance.instance.currentmoney;
         Debug.Log(money);
@@ -84,6 +85,7 @@ public class PlayerInformation : MonoBehaviour
             {
                 GetComponent<wheel>().CanTouchFinishLine = false;
                 GameManager.instance.SpawnItem();
+                GameManager.instance.SpawnEnemy();
                 Lap++;
 
                 if(Lap >= 3)
