@@ -51,7 +51,7 @@ public class EnemyCar : MonoBehaviour
         {
             if(WayPoints.childCount > WayIndex)
                 WayIndex--;
-
+         
             TargetPoint = WayPoints.GetChild(WayIndex);
         }
 

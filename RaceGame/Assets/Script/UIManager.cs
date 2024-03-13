@@ -14,6 +14,10 @@ public class UIManager : MonoBehaviour
     public GameObject shopUI;
     public Image[] BuyItemIcons;
     public Sprite[] BuyItemImages;
+    public GameObject EndUI;
+    public Text timetext;
+    public Text moneyText;
+
     private void Awake()
     {
         if (instance == null)
@@ -103,5 +107,10 @@ public class UIManager : MonoBehaviour
         shopUI.SetActive(false);
         bTimeMove = true;
         Time.timeScale = Convert.ToInt32(bTimeMove);
+    }
+
+    public void GameEndUI()
+    {
+        EndUI.SetActive(true);
     }
 }
